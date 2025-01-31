@@ -5,8 +5,8 @@
   "main": "dist/bundle.js",
   "scripts": {
     "analyze": "export ANALYZE_MODE=static && npm run build",
-    "build": "export BABEL_ENV=build && webpack --config webpack.prod.js",
-    "clean": "rm -rf dist && rm -f .eslintcache",
+    "build": "set BABEL_ENV=build && webpack --config webpack.prod.js",
+    "clean": "if exist dist rmdir /s /q dist && if exist .eslintcache del /f .eslintcache",
     "clean:all": "rm -rf node_modules && npm run clean",
     "develop": "webpack serve --hot --server-type https  --port 8080 --config webpack.develop.js",
     "prebuild": "npm run clean",
